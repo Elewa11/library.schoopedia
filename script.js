@@ -482,4 +482,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Handle Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    if (contactForm && formSuccess) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent default submission behavior (no app redirect)
+            
+            // Show success message
+            formSuccess.style.display = 'block';
+            
+            // Auto hide after 5 seconds and reset form
+            setTimeout(() => {
+                formSuccess.style.display = 'none';
+                contactForm.reset();
+            }, 5000);
+        });
+    }
 });

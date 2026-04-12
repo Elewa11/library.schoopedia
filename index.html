@@ -95,8 +95,7 @@
                 </div>
 
                 <h1 lang="ar">
-                    أكبر <span class="text-gradient">مكتبة رقمية</span> عربية
-                    <br>للمصادر التعليمية
+                    <span class="text-gradient">سكوبيديا</span> - أكبر مكتبة عربية للمصادر التعليمية الجاهزة للاستخدام
                 </h1>
                 <h1 lang="en">
                     The Largest Arabic <span class="text-gradient">Digital Library</span>
@@ -104,7 +103,7 @@
                 </h1>
 
                 <p class="hero-subtitle" lang="ar">
-                    مكتبة رقمية متكاملة للمعلمين والمدارس، تضم أكثر من مليون مصدر تعليمي مرتبط بالمناهج الوطنية — فيديوهات، تقييمات، عناصر تفاعلية، ووثائق تعليمية.
+                    سكوبيديا هي مكتبة تعليمية رقمية موجهة خصيصًا للمعلمين والمدارس، تضم آلاف المصادر التعليمية المرتبطة بالمناهج الوطنية في مختلف الدول.
                 </p>
                 <p class="hero-subtitle" lang="en">
                     A comprehensive digital library for teachers and schools, featuring over 1 million educational resources mapped to national curricula — videos, assessments, interactive elements, and educational documents.
@@ -239,7 +238,7 @@
                 <!-- Card 1 -->
                 <div class="feature-card feature-blue reveal reveal-delay-1">
                     <div class="feature-icon">📚</div>
-                    <h3 lang="ar">مكتبة المناهج الوطنية</h3>
+                    <h3 lang="ar">مكتبة المناهج الحكومية</h3>
                     <h3 lang="en">National Curricula Library</h3>
                     <p lang="ar">مصادر تعليمية مخصصة مبنية على المناهج الدراسية الرسمية لكل دولة، مع ربط ذكي بالأهداف التعليمية.</p>
                     <p lang="en">Customized educational resources built on the official curriculum of each country, with smart mapping to learning objectives.</p>
@@ -523,11 +522,12 @@
             <p class="modal-desc" lang="ar">اترك لنا رسالة وسنقوم بالرد عليك في أقرب وقت.</p>
             <p class="modal-desc" lang="en">Leave us a message and we'll get back to you soon.</p>
 
-            <form action="mailto:moamen.elewa@almotahidaeducation.com" method="post" enctype="text/plain" class="modal-form" style="direction: ltr;">
-                <input type="text" class="form-input" placeholder="Full Name / الاسم الكامل" required>
-                <input type="email" class="form-input" placeholder="Email / البريد الإلكتروني" required>
-                <input type="text" class="form-input" placeholder="Organization / المؤسسة">
-                <textarea class="form-input" placeholder="Your Message / الرسالة" rows="4" required></textarea>
+            <form id="contactForm" class="modal-form" style="direction: ltr;">
+                <input type="text" id="contactName" class="form-input" placeholder="Full Name / الاسم الكامل" required>
+                <input type="email" id="contactEmail" class="form-input" placeholder="Email / البريد الإلكتروني" required>
+                <input type="text" id="contactOrg" class="form-input" placeholder="Organization / المؤسسة">
+                <textarea id="contactMessage" class="form-input" placeholder="Your Message / الرسالة" rows="4" required></textarea>
+                <div id="formSuccess" style="display: none; color: var(--brand-green); font-size: 0.9rem; text-align: center; margin-bottom: 0.5rem; background: rgba(107, 191, 78, 0.1); padding: 0.5rem; border-radius: 4px;">Message sent successfully! / تم إرسال الرسالة بنجاح!</div>
                 <button type="submit" class="btn btn-primary" style="width: 100%;" lang="ar">إرسال الرسالة</button>
                 <button type="submit" class="btn btn-primary" style="width: 100%;" lang="en">Send Message</button>
             </form>
