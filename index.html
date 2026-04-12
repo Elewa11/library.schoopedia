@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schoopedia Library | سكوبيديا</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-ar">
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span style="color: var(--primary)">Schoo</span>pedia
+            </a>
+            <div class="nav-links">
+                <a href="#features" lang="ar">المميزات</a>
+                <a href="#features" lang="en">Features</a>
+                <a href="#audience" lang="ar">لمن هذا؟</a>
+                <a href="#audience" lang="en">Whom is it for?</a>
+                <a href="#contact" lang="ar">اتصل بنا</a>
+                <a href="#contact" lang="en">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="lang-toggle" onclick="toggleLanguage()">
+                    <span lang="ar">English</span>
+                    <span lang="en">العربية</span>
+                </button>
+                <a href="https://library.schoopedia.com/login" class="btn btn-outline" lang="ar">تسجيل الدخول</a>
+                <a href="https://library.schoopedia.com/login" class="btn btn-outline" lang="en">Login</a>
+                <button class="btn btn-primary" onclick="openModal()" lang="ar">تواصل معنا</button>
+                <button class="btn btn-primary" onclick="openModal()" lang="en">Contact Us</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 lang="ar">سكوبيديا - أكبر مكتبة عربية للمصادر التعليمية الجاهزة للاستخدام</h1>
+                <h1 lang="en">Schoopedia - The largest Arabic library for ready-to-use educational resources</h1>
+                
+                <p lang="ar">مكتبة رقمية متكاملة للمعلمين والمدارس، تضم آلاف المصادر التعليمية المرتبطة بالمناهج الوطنية، وتجمع بين المناهج الحكومية والمكتبات العامة والمفتوحة.</p>
+                <p lang="en">A comprehensive digital library for teachers and schools, featuring thousands of educational resources mapped to national curricula, combining government, general, and open libraries.</p>
+                
+                <div class="hero-btns" style="display: flex; gap: 1rem;">
+                    <a href="https://library.schoopedia.com/login" class="btn btn-primary" lang="ar">ابدأ الآن مجاناً</a>
+                    <a href="https://library.schoopedia.com/login" class="btn btn-primary" lang="en">Start Now for Free</a>
+                    
+                    <button class="btn btn-secondary" onclick="openModal()" lang="ar">اطلب عرضاً تجريبياً</button>
+                    <button class="btn btn-secondary" onclick="openModal()" lang="en">Request a Demo</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card" style="top: 20%; right: -10%;">
+                    <div style="background: var(--primary); width: 40px; height: 40px; border-radius: 50%;"></div>
+                    <div>
+                        <strong style="display: block;">1,000,000+</strong>
+                        <small lang="ar">سؤال وتقييم</small>
+                        <small lang="en">Questions & Assessments</small>
+                    </div>
+                </div>
+                <div class="floating-card" style="bottom: 10%; left: -5%;">
+                    <div style="background: var(--secondary); width: 40px; height: 40px; border-radius: 50%;"></div>
+                    <div>
+                        <strong style="display: block;">30,000+</strong>
+                        <small lang="ar">فيديو تعليمي</small>
+                        <small lang="en">Educational Videos</small>
+                    </div>
+                </div>
+                <img src="hero-visual.png" alt="Schoopedia Platform">
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <h3>+30,000</h3>
+                    <p lang="ar">فيديو تعليمي</p>
+                    <p lang="en">Videos</p>
+                </div>
+                <div class="metric-item">
+                    <h3>+10,000</h3>
+                    <p lang="ar">عنصر تفاعلي</p>
+                    <p lang="en">Interactives</p>
+                </div>
+                <div class="metric-item">
+                    <h3>+1,000,000</h3>
+                    <p lang="ar">سؤال وتقييم</p>
+                    <p lang="en">Questions</p>
+                </div>
+                <div class="metric-item">
+                    <h3>+900,000</h3>
+                    <p lang="ar">مصدر إثرائي</p>
+                    <p lang="en">Resources</p>
+                </div>
+                <div class="metric-item">
+                    <h3>+60,000</h3>
+                    <p lang="ar">وثيقة تعليمية</p>
+                    <p lang="en">Documents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Libraries Section -->
+    <section id="features" class="section-padding">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;" lang="ar">اكتشف ثلاث مكتبات في مكان واحد</h2>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;" lang="en">Discover Three Libraries in One Place</h2>
+            </div>
+            
+            <style>
+                .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+                .feature-card { background: white; padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow-sm); border: 1px solid #f1f5f9; transition: var(--transition); }
+                .feature-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
+                .card-icon { width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
+            </style>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="card-icon" style="background: rgba(37, 99, 235, 0.1); color: var(--primary);">📚</div>
+                    <h3 lang="ar">مكتبة المناهج الوطنية</h3>
+                    <h3 lang="en">National Curricula Library</h3>
+                    <p lang="ar">مصادر تعليمية مخصصة مبنية على المناهج الدراسية الرسمية لكل دولة.</p>
+                    <p lang="en">Customized educational resources built on the official curriculum of each country.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--secondary);">🔬</div>
+                    <h3 lang="ar">مكتبة المصادر العامة</h3>
+                    <h3 lang="en">General Resources Library</h3>
+                    <p lang="ar">توسع في المعرفة بمصادر إثرائية تغطي مواضيع متنوعة خارج الإطار الدراسي التقليدي.</p>
+                    <p lang="en">Expand knowledge with enrichment resources covering various topics outside the traditional framework.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--accent);">🌐</div>
+                    <h3 lang="ar">مكتبة المصادر المفتوحة</h3>
+                    <h3 lang="en">Open Resources Library</h3>
+                    <p lang="ar">محتوى تعليمي من مصادر عالمية عالمية متاحة للجميع لتعزيز التجربة التعليمية.</p>
+                    <p lang="en">Educational content from global open sources available to everyone to enhance the learning experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section id="audience" class="section-padding" style="background: #f1f5f9;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;" lang="ar">لمن صُممت سكوبيديا؟</h2>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;" lang="en">Who is Schoopedia built for?</h2>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card" style="text-align: center;">
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;" lang="ar">المعلمون</h3>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;" lang="en">Teachers</h3>
+                    <p lang="ar">تسهيل عملية التحضير والوصول لآلاف الأسئلة والفيديوهات الجاهزة لدعم الحصة الدراسية.</p>
+                    <p lang="en">Simplified preparation and access to thousands of ready-made questions and videos to support classroom sessions.</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;" lang="ar">المشرفون</h3>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;" lang="en">Supervisors</h3>
+                    <p lang="ar">أدوات لمتابعة جودة المحتوى التعليمي وضمان توافقه مع المعايير الوطنية.</p>
+                    <p lang="en">Tools to monitor educational content quality and ensure compliance with national standards.</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;" lang="ar">المدارس والوزارات</h3>
+                    <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;" lang="en">Schools & Ministries</h3>
+                    <p lang="ar">حل شامل للتحول الرقمي التعليمي بمصادر موثوقة ونطاق واسع.</p>
+                    <p lang="en">A comprehensive solution for educational digital transformation with reliable, large-scale resources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer style="background: var(--text-dark); color: white; padding: 4rem 0 2rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem;">
+                <div>
+                    <a href="#" class="logo" style="margin-bottom: 1.5rem;">
+                        <span style="color: var(--primary-light)">Schoo</span>pedia
+                    </a>
+                    <p style="color: #94a3b8; max-width: 400px;" lang="ar">نحن ملتزمون بتمكين التعليم من خلال التكنولوجيا وتوفير مصادر عالية الجودة لكل طالب ومهندس.</p>
+                    <p style="color: #94a3b8; max-width: 400px;" lang="en">We are committed to empowering education through technology and providing high-quality resources for every student and teacher.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;" lang="ar">روابط سريعة</h4>
+                    <h4 style="margin-bottom: 1.5rem;" lang="en">Quick Links</h4>
+                    <ul style="list-style: none; color: #94a3b8;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: inherit; text-decoration: none;">Features</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: inherit; text-decoration: none;">Logon</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: inherit; text-decoration: none;">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;" lang="ar">تواصل معنا</h4>
+                    <h4 style="margin-bottom: 1.5rem;" lang="en">Contact Us</h4>
+                    <p style="color: #94a3b8;">moamen.elewa@almotahidaeducation.com</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #334155; padding-top: 2rem; text-align: center; color: #64748b; font-size: 0.875rem;">
+                <p>© 2025 Schoopedia. All rights reserved | جميع الحقوق محفوظة لدى سكوبيديا</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+        <div style="background: white; width: 90%; max-width: 500px; padding: 2.5rem; border-radius: 24px; position: relative; box-shadow: var(--shadow-lg);">
+            <button onclick="closeModal()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">×</button>
+            <h2 style="margin-bottom: 0.5rem;" lang="ar">تواصل معنا</h2>
+            <h2 style="margin-bottom: 0.5rem;" lang="en">Contact Us</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;" lang="ar">اترك لنا رسالة وسنقوم بالرد عليك في أقرب وقت.</p>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;" lang="en">Leave us a message and we'll get back to you soon.</p>
+            
+            <form action="mailto:moamen.elewa@almotahidaeducation.com" method="post" enctype="text/plain" style="display: flex; direction: ltr; flex-direction: column; gap: 1rem;">
+                <input type="text" placeholder="Full Name / الاسم الكامل" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #e2e8f0; border-radius: 12px;" required>
+                <input type="email" placeholder="Email / البريد الإلكتروني" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #e2e8f0; border-radius: 12px;" required>
+                <textarea placeholder="Your Message / الرسالة" rows="4" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #e2e8f0; border-radius: 12px;" required></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" lang="ar">إرسال الرسالة</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" lang="en">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
