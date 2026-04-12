@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchooPedia | سكوبيديا — أكبر مكتبة رقمية تعليمية عربية</title>
+    <meta name="description" content="سكوبيديا - مكتبة رقمية متكاملة للمعلمين والمدارس تضم أكثر من مليون مصدر تعليمي. SchooPedia - The largest Arabic digital education library.">
+    <meta name="keywords" content="SchooPedia, سكوبيديا, مكتبة رقمية, تعليم, EdTech, education, digital library">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo-en.png">
+</head>
+<body class="lang-ar">
+
+    <!-- Animated Background Orbs -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+    </div>
+
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- ======================== NAVIGATION ======================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo-ar.png" alt="سكوبيديا" lang="ar">
+                <img src="assets/logo-en.png" alt="SchooPedia" lang="en">
+            </a>
+
+            <div class="nav-links">
+                <a href="#features" lang="ar">المكتبات</a>
+                <a href="#features" lang="en">Libraries</a>
+
+                <a href="#how-it-works" lang="ar">كيف تعمل</a>
+                <a href="#how-it-works" lang="en">How it Works</a>
+
+                <a href="#showcase" lang="ar">المنصة</a>
+                <a href="#showcase" lang="en">Platform</a>
+
+                <a href="#audience" lang="ar">لمن صُممت</a>
+                <a href="#audience" lang="en">Who it's for</a>
+
+                <a href="#contact" lang="ar">تواصل معنا</a>
+                <a href="#contact" lang="en">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">
+                    <span lang="ar">English</span>
+                    <span lang="en">العربية</span>
+                </button>
+                <a href="https://library.schoopedia.com/login" class="btn btn-outline" lang="ar">تسجيل الدخول</a>
+                <a href="https://library.schoopedia.com/login" class="btn btn-outline" lang="en">Login</a>
+                <button class="btn btn-primary" onclick="openModal()" lang="ar">احجز عرضاً</button>
+                <button class="btn btn-primary" onclick="openModal()" lang="en">Book a Demo</button>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <a href="#features" onclick="closeMobileNav()" lang="ar">المكتبات</a>
+        <a href="#features" onclick="closeMobileNav()" lang="en">Libraries</a>
+        <a href="#how-it-works" onclick="closeMobileNav()" lang="ar">كيف تعمل</a>
+        <a href="#how-it-works" onclick="closeMobileNav()" lang="en">How it Works</a>
+        <a href="#showcase" onclick="closeMobileNav()" lang="ar">المنصة</a>
+        <a href="#showcase" onclick="closeMobileNav()" lang="en">Platform</a>
+        <a href="#audience" onclick="closeMobileNav()" lang="ar">لمن صُممت</a>
+        <a href="#audience" onclick="closeMobileNav()" lang="en">Who it's for</a>
+        <a href="#contact" onclick="closeMobileNav()" lang="ar">تواصل معنا</a>
+        <a href="#contact" onclick="closeMobileNav()" lang="en">Contact</a>
+        <button class="btn btn-primary" onclick="openModal(); closeMobileNav();" lang="ar">احجز عرضاً</button>
+        <button class="btn btn-primary" onclick="openModal(); closeMobileNav();" lang="en">Book a Demo</button>
+    </div>
+
+
+    <!-- ======================== HERO SECTION ======================== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span lang="ar">منصة تعليمية ذكية</span>
+                    <span lang="en">Smart Education Platform</span>
+                </div>
+
+                <h1 lang="ar">
+                    <span class="text-gradient">سكوبيديا</span> - أكبر مكتبة عربية للمصادر التعليمية الجاهزة للاستخدام
+                </h1>
+                <h1 lang="en">
+                    The Largest Arabic <span class="text-gradient">Digital Library</span>
+                    <br>for Education
+                </h1>
+
+                <p class="hero-subtitle" lang="ar">
+                    سكوبيديا هي مكتبة تعليمية رقمية موجهة خصيصًا للمعلمين والمدارس، تضم آلاف المصادر التعليمية المرتبطة بالمناهج الوطنية في مختلف الدول.
+                </p>
+                <p class="hero-subtitle" lang="en">
+                    A comprehensive digital library for teachers and schools, featuring over 1 million educational resources mapped to national curricula — videos, assessments, interactive elements, and educational documents.
+                </p>
+
+                <div class="hero-btns">
+                    <a href="https://library.schoopedia.com/login" class="btn btn-primary" lang="ar">
+                        ابدأ الآن مجاناً
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://library.schoopedia.com/login" class="btn btn-primary" lang="en">
+                        Start Free Now
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <button class="btn btn-secondary" onclick="openModal()" lang="ar">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        شاهد العرض التوضيحي
+                    </button>
+                    <button class="btn btn-secondary" onclick="openModal()" lang="en">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Watch Demo
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="1000000">0</span>
+                        <span class="stat-label" lang="ar">سؤال وتقييم</span>
+                        <span class="stat-label" lang="en">Assessments</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="30000">0</span>
+                        <span class="stat-label" lang="ar">فيديو تعليمي</span>
+                        <span class="stat-label" lang="en">Videos</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number" data-target="900000">0</span>
+                        <span class="stat-label" lang="ar">مصدر إثرائي</span>
+                        <span class="stat-label" lang="en">Resources</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-visual-wrapper">
+                    <img src="assets/hero-dashboard.png" alt="SchooPedia Platform Dashboard">
+                </div>
+
+                <!-- Floating Info Cards -->
+                <div class="hero-float-card float-card-1">
+                    <div class="float-icon" style="background: rgba(90, 173, 224, 0.15);">📚</div>
+                    <div class="float-text">
+                        <strong>+1,000,000</strong>
+                        <span lang="ar">سؤال وتقييم</span>
+                        <span lang="en">Questions & Assessments</span>
+                    </div>
+                </div>
+
+                <div class="hero-float-card float-card-2">
+                    <div class="float-icon" style="background: rgba(197, 217, 58, 0.15);">🎬</div>
+                    <div class="float-text">
+                        <strong>+30,000</strong>
+                        <span lang="ar">فيديو تعليمي</span>
+                        <span lang="en">Educational Videos</span>
+                    </div>
+                </div>
+
+                <div class="hero-float-card float-card-3">
+                    <div class="float-icon" style="background: rgba(139, 77, 158, 0.15);">🌐</div>
+                    <div class="float-text">
+                        <strong>+10,000</strong>
+                        <span lang="ar">عنصر تفاعلي</span>
+                        <span lang="en">Interactive Elements</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================== METRICS BAR ======================== -->
+    <section class="metrics" id="metrics">
+        <div class="container">
+            <div class="metrics-inner reveal">
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <h3 data-count="30000">+30,000</h3>
+                        <p lang="ar">فيديو تعليمي</p>
+                        <p lang="en">Videos</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3 data-count="10000">+10,000</h3>
+                        <p lang="ar">عنصر تفاعلي</p>
+                        <p lang="en">Interactives</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3 data-count="1000000">+1,000,000</h3>
+                        <p lang="ar">سؤال وتقييم</p>
+                        <p lang="en">Questions</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3 data-count="900000">+900,000</h3>
+                        <p lang="ar">مصدر إثرائي</p>
+                        <p lang="en">Resources</p>
+                    </div>
+                    <div class="metric-item">
+                        <h3 data-count="60000">+60,000</h3>
+                        <p lang="ar">وثيقة تعليمية</p>
+                        <p lang="en">Documents</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================== FEATURES / LIBRARIES ======================== -->
+    <section class="features section-padding" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">
+                    <span lang="ar">🏛️ المكتبات</span>
+                    <span lang="en">🏛️ Libraries</span>
+                </span>
+                <h2 class="section-title" lang="ar">ثلاث مكتبات متكاملة في مكان واحد</h2>
+                <h2 class="section-title" lang="en">Three Complete Libraries in One Place</h2>
+                <p class="section-subtitle" lang="ar">اكتشف مصادر تعليمية متنوعة تغطي جميع احتياجاتك الأكاديمية والإثرائية</p>
+                <p class="section-subtitle" lang="en">Discover diverse educational resources covering all your academic and enrichment needs</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card feature-blue reveal reveal-delay-1">
+                    <div class="feature-icon">📚</div>
+                    <h3 lang="ar">مكتبة المناهج الحكومية</h3>
+                    <h3 lang="en">National Curricula Library</h3>
+                    <p lang="ar">مصادر تعليمية مخصصة مبنية على المناهج الدراسية الرسمية لكل دولة، مع ربط ذكي بالأهداف التعليمية.</p>
+                    <p lang="en">Customized educational resources built on the official curriculum of each country, with smart mapping to learning objectives.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card feature-green reveal reveal-delay-2">
+                    <div class="feature-icon">🔬</div>
+                    <h3 lang="ar">مكتبة المصادر العامة</h3>
+                    <h3 lang="en">General Resources Library</h3>
+                    <p lang="ar">توسّع في المعرفة بمصادر إثرائية تغطي مواضيع متنوعة خارج الإطار الدراسي التقليدي.</p>
+                    <p lang="en">Expand knowledge with enrichment resources covering various topics outside the traditional framework.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card feature-purple reveal reveal-delay-3">
+                    <div class="feature-icon">🌐</div>
+                    <h3 lang="ar">مكتبة المصادر المفتوحة</h3>
+                    <h3 lang="en">Open Resources Library</h3>
+                    <p lang="ar">محتوى تعليمي من مصادر عالمية متاحة للجميع لتعزيز التجربة التعليمية بأفضل الممارسات.</p>
+                    <p lang="en">Educational content from global open sources available to everyone to enhance the learning experience.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feature-card feature-yellow reveal reveal-delay-1">
+                    <div class="feature-icon">🧠</div>
+                    <h3 lang="ar">بحث ذكي بالذكاء الاصطناعي</h3>
+                    <h3 lang="en">AI-Powered Smart Search</h3>
+                    <p lang="ar">محرك بحث ذكي يفهم احتياجاتك ويقدم لك النتائج الأكثر صلة بسرعة فائقة.</p>
+                    <p lang="en">An intelligent search engine that understands your needs and delivers the most relevant results instantly.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="feature-card feature-pink reveal reveal-delay-2">
+                    <div class="feature-icon">📊</div>
+                    <h3 lang="ar">تقييمات وأسئلة جاهزة</h3>
+                    <h3 lang="en">Ready-Made Assessments</h3>
+                    <p lang="ar">أكثر من مليون سؤال وتقييم جاهز للاستخدام مباشرة في حصصك الدراسية.</p>
+                    <p lang="en">Over 1 million questions and assessments ready to use directly in your classroom sessions.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="feature-card feature-lime reveal reveal-delay-3">
+                    <div class="feature-icon">🎥</div>
+                    <h3 lang="ar">فيديوهات تعليمية متميزة</h3>
+                    <h3 lang="en">Premium Educational Videos</h3>
+                    <p lang="ar">مكتبة ضخمة من الفيديوهات التعليمية العالية الجودة المرتبطة بالمناهج الدراسية.</p>
+                    <p lang="en">A massive library of high-quality educational videos mapped to national curricula.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================== HOW IT WORKS ======================== -->
+    <section class="how-it-works section-padding" id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">
+                    <span lang="ar">⚡ كيف تعمل</span>
+                    <span lang="en">⚡ How it Works</span>
+                </span>
+                <h2 class="section-title" lang="ar">ابدأ في أربع خطوات بسيطة</h2>
+                <h2 class="section-title" lang="en">Get Started in Four Simple Steps</h2>
+                <p class="section-subtitle" lang="ar">من التسجيل إلى الاستخدام الفعّال — رحلة سهلة وسريعة</p>
+                <p class="section-subtitle" lang="en">From registration to effective use — a fast and easy journey</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card reveal reveal-delay-1">
+                    <div class="step-number">01</div>
+                    <h3 lang="ar">أنشئ حسابك</h3>
+                    <h3 lang="en">Create Your Account</h3>
+                    <p lang="ar">سجّل مجاناً وأنشئ حسابك في أقل من دقيقة.</p>
+                    <p lang="en">Sign up for free and create your account in less than a minute.</p>
+                </div>
+
+                <div class="step-card reveal reveal-delay-2">
+                    <div class="step-number">02</div>
+                    <h3 lang="ar">اختر المنهج</h3>
+                    <h3 lang="en">Select Curriculum</h3>
+                    <p lang="ar">اختر المنهج الدراسي والمرحلة التعليمية المناسبة لك.</p>
+                    <p lang="en">Choose the curriculum and grade level that suits you.</p>
+                </div>
+
+                <div class="step-card reveal reveal-delay-3">
+                    <div class="step-number">03</div>
+                    <h3 lang="ar">تصفّح المصادر</h3>
+                    <h3 lang="en">Browse Resources</h3>
+                    <p lang="ar">استكشف آلاف المصادر من فيديوهات وتقييمات وعناصر تفاعلية.</p>
+                    <p lang="en">Explore thousands of resources including videos, assessments, and interactive elements.</p>
+                </div>
+
+                <div class="step-card reveal reveal-delay-4">
+                    <div class="step-number">04</div>
+                    <h3 lang="ar">استخدم في حصتك</h3>
+                    <h3 lang="en">Use in Your Class</h3>
+                    <p lang="ar">ادمج المصادر مباشرة في حصصك الدراسية وارفع جودة التعليم.</p>
+                    <p lang="en">Integrate resources directly into your classes and elevate education quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================== PLATFORM SHOWCASE ======================== -->
+    <section class="showcase section-padding" id="showcase">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">
+                    <span lang="ar">💻 المنصة</span>
+                    <span lang="en">💻 Platform</span>
+                </span>
+                <h2 class="section-title" lang="ar">تجربة تعليمية رقمية متطورة</h2>
+                <h2 class="section-title" lang="en">An Advanced Digital Learning Experience</h2>
+                <p class="section-subtitle" lang="ar">واجهة سهلة الاستخدام مع أدوات ذكية تمكّنك من الوصول للمحتوى المناسب بسرعة</p>
+                <p class="section-subtitle" lang="en">User-friendly interface with smart tools that help you access the right content quickly</p>
+            </div>
+
+            <div class="showcase-visual reveal">
+                <img src="assets/platform-showcase.png" alt="SchooPedia Platform Preview">
+            </div>
+
+            <div class="showcase-features">
+                <div class="showcase-feature reveal reveal-delay-1">
+                    <div class="sf-icon">📂</div>
+                    <h4 lang="ar">تصنيف ذكي</h4>
+                    <h4 lang="en">Smart Categories</h4>
+                    <p lang="ar">تصنيف المصادر حسب المادة والصف والموضوع</p>
+                    <p lang="en">Resources organized by subject, grade, and topic</p>
+                </div>
+                <div class="showcase-feature reveal reveal-delay-2">
+                    <div class="sf-icon">🔍</div>
+                    <h4 lang="ar">بحث متقدم</h4>
+                    <h4 lang="en">Advanced Search</h4>
+                    <p lang="ar">فلترة دقيقة وبحث سريع في المحتوى</p>
+                    <p lang="en">Precise filtering and fast content search</p>
+                </div>
+                <div class="showcase-feature reveal reveal-delay-3">
+                    <div class="sf-icon">📱</div>
+                    <h4 lang="ar">متوافق مع الأجهزة</h4>
+                    <h4 lang="en">All Devices</h4>
+                    <p lang="ar">يعمل بسلاسة على الحاسوب والتابلت والجوال</p>
+                    <p lang="en">Works seamlessly on desktop, tablet, and mobile</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================== AUDIENCE ======================== -->
+    <section class="audience section-padding" id="audience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">
+                    <span lang="ar">👥 الفئات المستهدفة</span>
+                    <span lang="en">👥 Target Audience</span>
+                </span>
+                <h2 class="section-title" lang="ar">لمن صُممت سكوبيديا؟</h2>
+                <h2 class="section-title" lang="en">Who is SchooPedia built for?</h2>
+                <p class="section-subtitle" lang="ar">منصة شاملة تخدم جميع أركان العملية التعليمية</p>
+                <p class="section-subtitle" lang="en">A comprehensive platform serving all pillars of the educational process</p>
+            </div>
+
+            <div class="audience-grid">
+                <div class="audience-card reveal reveal-delay-1">
+                    <div class="audience-icon">🧑‍🏫</div>
+                    <h3 lang="ar">المعلمون</h3>
+                    <h3 lang="en">Teachers</h3>
+                    <p lang="ar">تسهيل عملية التحضير والوصول لآلاف الأسئلة والفيديوهات الجاهزة لدعم الحصة الدراسية وتوفير وقتهم.</p>
+                    <p lang="en">Simplified preparation and access to thousands of ready-made questions and videos to support classroom sessions and save time.</p>
+                </div>
+
+                <div class="audience-card reveal reveal-delay-2">
+                    <div class="audience-icon">📋</div>
+                    <h3 lang="ar">المشرفون التربويون</h3>
+                    <h3 lang="en">Education Supervisors</h3>
+                    <p lang="ar">أدوات لمتابعة جودة المحتوى التعليمي وضمان توافقه مع المعايير الوطنية والأطر المرجعية.</p>
+                    <p lang="en">Tools to monitor educational content quality and ensure compliance with national standards and frameworks.</p>
+                </div>
+
+                <div class="audience-card reveal reveal-delay-3">
+                    <div class="audience-icon">🏫</div>
+                    <h3 lang="ar">المدارس والوزارات</h3>
+                    <h3 lang="en">Schools & Ministries</h3>
+                    <p lang="ar">حل شامل للتحول الرقمي التعليمي بمصادر موثوقة ونطاق واسع يغطي جميع المراحل الدراسية.</p>
+                    <p lang="en">A comprehensive solution for educational digital transformation with reliable, large-scale resources covering all grade levels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================== CTA SECTION ======================== -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2 lang="ar">ابدأ رحلتك التعليمية الرقمية اليوم</h2>
+                <h2 lang="en">Start Your Digital Education Journey Today</h2>
+                <p lang="ar">انضم إلى آلاف المعلمين والمدارس التي تستخدم سكوبيديا لتقديم تعليم أفضل</p>
+                <p lang="en">Join thousands of teachers and schools using SchooPedia to deliver better education</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://library.schoopedia.com/login" class="btn" lang="ar">ابدأ الآن مجاناً</a>
+                    <a href="https://library.schoopedia.com/login" class="btn" lang="en">Start Now for Free</a>
+                    <button class="btn btn-secondary" onclick="openModal()" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white;" lang="ar">تواصل معنا</button>
+                    <button class="btn btn-secondary" onclick="openModal()" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white;" lang="en">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo-ar.png" alt="سكوبيديا" lang="ar">
+                    <img src="assets/logo-en.png" alt="SchooPedia" lang="en">
+                    <p lang="ar">نحن ملتزمون بتمكين التعليم من خلال التكنولوجيا وتوفير مصادر عالية الجودة لكل معلم وطالب في العالم العربي.</p>
+                    <p lang="en">We are committed to empowering education through technology and providing high-quality resources for every teacher and student in the Arab world.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 lang="ar">المنتج</h4>
+                    <h4 lang="en">Product</h4>
+                    <ul>
+                        <li><a href="#features" lang="ar">المكتبات</a></li>
+                        <li><a href="#features" lang="en">Libraries</a></li>
+                        <li><a href="#showcase" lang="ar">المنصة</a></li>
+                        <li><a href="#showcase" lang="en">Platform</a></li>
+                        <li><a href="https://library.schoopedia.com/login" lang="ar">تسجيل الدخول</a></li>
+                        <li><a href="https://library.schoopedia.com/login" lang="en">Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 lang="ar">الشركة</h4>
+                    <h4 lang="en">Company</h4>
+                    <ul>
+                        <li><a href="#" lang="ar">من نحن</a></li>
+                        <li><a href="#" lang="en">About Us</a></li>
+                        <li><a href="#" lang="ar">الشروط والأحكام</a></li>
+                        <li><a href="#" lang="en">Terms & Conditions</a></li>
+                        <li><a href="#" lang="ar">سياسة الخصوصية</a></li>
+                        <li><a href="#" lang="en">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 lang="ar">تواصل معنا</h4>
+                    <h4 lang="en">Contact Us</h4>
+                    <ul>
+                        <li><a href="mailto:moamen.elewa@almotahidaeducation.com">moamen.elewa@almotahidaeducation.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p lang="ar">© 2025 SchooPedia. جميع الحقوق محفوظة لدى سكوبيديا</p>
+                <p lang="en">© 2025 SchooPedia. All rights reserved</p>
+                <p lang="ar">من تطوير المتحدة للتعليم</p>
+                <p lang="en">Developed by Almotahida Education</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ======================== CONTACT MODAL ======================== -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="إغلاق">×</button>
+
+            <h2 lang="ar">تواصل معنا</h2>
+            <h2 lang="en">Contact Us</h2>
+            <p class="modal-desc" lang="ar">اترك لنا رسالة وسنقوم بالرد عليك في أقرب وقت.</p>
+            <p class="modal-desc" lang="en">Leave us a message and we'll get back to you soon.</p>
+
+            <form id="contactForm" class="modal-form" style="direction: ltr;">
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Full Name / الاسم الكامل" required>
+                <input type="text" id="contactSchool" name="school" class="form-input" placeholder="School or Institution / المدرسة أو المؤسسة التعليمية" required>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="Email / البريد الإلكتروني" required>
+                <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="Phone Number / رقم الهاتف" required>
+                <textarea id="contactMessage" name="message" class="form-input" placeholder="Your Message / الرسالة" rows="4" required></textarea>
+                
+                <!-- Anti-spam & Configuration for FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                
+                <div id="formStatus" style="display: none; font-size: 0.9rem; text-align: center; margin-bottom: 0.5rem; padding: 0.5rem; border-radius: 4px;"></div>
+                
+                <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;" lang="ar">إرسال الرسالة</button>
+                <button type="submit" id="submitBtnEn" class="btn btn-primary" style="width: 100%;" lang="en">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
