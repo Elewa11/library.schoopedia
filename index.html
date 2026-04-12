@@ -523,13 +523,19 @@
             <p class="modal-desc" lang="en">Leave us a message and we'll get back to you soon.</p>
 
             <form id="contactForm" class="modal-form" style="direction: ltr;">
-                <input type="text" id="contactName" class="form-input" placeholder="Full Name / الاسم الكامل" required>
-                <input type="email" id="contactEmail" class="form-input" placeholder="Email / البريد الإلكتروني" required>
-                <input type="text" id="contactOrg" class="form-input" placeholder="Organization / المؤسسة">
-                <textarea id="contactMessage" class="form-input" placeholder="Your Message / الرسالة" rows="4" required></textarea>
-                <div id="formSuccess" style="display: none; color: var(--brand-green); font-size: 0.9rem; text-align: center; margin-bottom: 0.5rem; background: rgba(107, 191, 78, 0.1); padding: 0.5rem; border-radius: 4px;">Message sent successfully! / تم إرسال الرسالة بنجاح!</div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;" lang="ar">إرسال الرسالة</button>
-                <button type="submit" class="btn btn-primary" style="width: 100%;" lang="en">Send Message</button>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Full Name / الاسم الكامل" required>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="Email / البريد الإلكتروني" required>
+                <input type="text" id="contactOrg" name="organization" class="form-input" placeholder="Organization / المؤسسة">
+                <textarea id="contactMessage" name="message" class="form-input" placeholder="Your Message / الرسالة" rows="4" required></textarea>
+                
+                <!-- Anti-spam & Configuration for FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                
+                <div id="formStatus" style="display: none; font-size: 0.9rem; text-align: center; margin-bottom: 0.5rem; padding: 0.5rem; border-radius: 4px;"></div>
+                
+                <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;" lang="ar">إرسال الرسالة</button>
+                <button type="submit" id="submitBtnEn" class="btn btn-primary" style="width: 100%;" lang="en">Send Message</button>
             </form>
         </div>
     </div>

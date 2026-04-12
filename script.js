@@ -483,21 +483,69 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle Contact Form Submission
+    // Handle Contact Form Submission via FormSubmit (Real Email Delivery)
     const contactForm = document.getElementById('contactForm');
-    const formSuccess = document.getElementById('formSuccess');
-    if (contactForm && formSuccess) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent default submission behavior (no app redirect)
+    const formStatus = document.getElementById('formStatus');
+    const submitBtns = [document.getElementById('submitBtn'), document.getElementById('submitBtnEn')];
+
+    if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); 
             
-            // Show success message
-            formSuccess.style.display = 'block';
-            
-            // Auto hide after 5 seconds and reset form
-            setTimeout(() => {
-                formSuccess.style.display = 'none';
+            // Disable buttons and show loading state
+            submitBtns.forEach(btn => {
+                if(btn) {
+                    btn.disabled = true;
+                    btn.style.opacity = '0.7';
+                    const originalText = btn.innerHTML;
+                    btn.dataset.originalText = originalText;
+                    btn.innerHTML = btn.lang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
+                }
+            });
+
+            // Gather form data
+            const formData = new FormData(contactForm);
+
+            // Send via fetch to formsubmit AJAX endpoint
+            fetch("https://formsubmit.co/ajax/moamen.elewa@almotahidaeducation.com", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show success
+                formStatus.style.display = 'block';
+                formStatus.style.background = 'rgba(107, 191, 78, 0.1)';
+                formStatus.style.color = 'var(--brand-green)';
+                formStatus.innerHTML = 'Message sent successfully! / تم إرسال الرسالة بنجاح!';
+                
+                // Reset form
                 contactForm.reset();
-            }, 5000);
+            })
+            .catch(error => {
+                // Show error
+                formStatus.style.display = 'block';
+                formStatus.style.background = 'rgba(220, 53, 69, 0.1)';
+                formStatus.style.color = '#dc3545';
+                formStatus.innerHTML = 'Error sending message. Please try again. / حدث خطأ أثناء الإرسال.';
+            })
+            .finally(() => {
+                // Restore buttons
+                submitBtns.forEach(btn => {
+                    if(btn) {
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
+                        if(btn.dataset.originalText) {
+                            btn.innerHTML = btn.dataset.originalText;
+                        }
+                    }
+                });
+
+                // Hide status after 5 seconds
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            });
         });
     }
 });
