@@ -53,6 +53,68 @@ function handleNavbarScroll() {
 window.addEventListener('scroll', handleNavbarScroll, { passive: true });
 
 
+// ======================== ACTIVE NAV LINK TRACKING ========================
+(function initActiveNavTracking() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-overlay a[href^="#"]');
+
+    if (!sections.length || !navLinks.length) return;
+
+    // Build a map: sectionId → [matching link elements]
+    const linkMap = {};
+    navLinks.forEach(link => {
+        const id = link.getAttribute('href').replace('#', '');
+        if (!linkMap[id]) linkMap[id] = [];
+        linkMap[id].push(link);
+    });
+    mobileLinks.forEach(link => {
+        const id = link.getAttribute('href').replace('#', '');
+        if (!linkMap[id]) linkMap[id] = [];
+        linkMap[id].push(link);
+    });
+
+    let currentActiveId = null;
+
+    function setActive(sectionId) {
+        if (sectionId === currentActiveId) return;
+        currentActiveId = sectionId;
+
+        // Clear all
+        navLinks.forEach(l => l.classList.remove('active'));
+        mobileLinks.forEach(l => l.classList.remove('active'));
+
+        // Set new active
+        if (linkMap[sectionId]) {
+            linkMap[sectionId].forEach(l => l.classList.add('active'));
+        }
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            // Pick the entry with the largest intersection ratio
+            let best = null;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (!best || entry.intersectionRatio > best.intersectionRatio) {
+                        best = entry;
+                    }
+                }
+            });
+            if (best) {
+                setActive(best.target.id);
+            }
+        },
+        {
+            rootMargin: '-20% 0px -60% 0px', // Trigger when section is in the upper-middle of viewport
+            threshold: [0, 0.1, 0.2, 0.3]
+        }
+    );
+
+    sections.forEach(section => observer.observe(section));
+})();
+
+
 // ======================== MOBILE NAVIGATION ========================
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileNav = document.getElementById('mobileNav');
