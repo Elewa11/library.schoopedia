@@ -1529,14 +1529,14 @@ body.lang-ar .audience-card p {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER (Premium SaaS)
    ============================================ */
 .site-footer {
     position: relative;
     z-index: 1;
-    background: var(--text-strong);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 5rem 0 2rem;
+    background: #0F172A; /* Deep Navy */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6rem 0 3rem;
     color: var(--text-muted);
 }
 
@@ -1544,85 +1544,131 @@ body.lang-ar .audience-card p {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 4rem;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .footer-brand img {
-    height: 48px;
-    margin-bottom: 1.5rem;
-    filter: brightness(0) invert(1); /* Pure white logo in footer */
-    opacity: 0.9;
+    height: 44px;
+    margin-bottom: 2rem;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
 }
 
 .footer-brand p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    max-width: 340px;
+    color: #94A3B8;
+    font-size: 1rem;
+    max-width: 360px;
     line-height: 1.8;
 }
 
 .footer-social {
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
 }
 
 .footer-social a {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-muted);
-    font-size: 1.2rem;
+    color: #94A3B8;
+    font-size: 1.1rem;
     transition: all var(--transition-base);
 }
 
 .footer-social a:hover {
     background: var(--gradient-primary);
     border-color: transparent;
-    color: white;
-    transform: translateY(-3px);
+    color: #FFFFFF;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px -5px rgba(91, 141, 239, 0.3);
 }
 
 .footer-column h4 {
     color: #FFFFFF;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 2px;
+    background: var(--brand-blue);
+    border-radius: var(--radius-full);
+}
+
+body.lang-en .footer-column h4::after {
+    right: auto;
+    left: 0;
+}
+
+.footer-column ul {
+    list-style: none;
 }
 
 .footer-column ul li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .footer-column ul li a {
     color: #94A3B8;
-    font-size: 0.9rem;
-    transition: var(--transition-fast);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    display: inline-block;
 }
 
 .footer-column ul li a:hover {
     color: var(--brand-blue);
-    padding-left: 4px;
+    transform: translateX(-4px);
 }
 
-body.lang-ar .footer-column ul li a:hover {
-    padding-left: 0;
-    padding-right: 4px;
+body.lang-en .footer-column ul li a:hover {
+    transform: translateX(4px);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #64748B;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
 }
 
 /* ============================================
