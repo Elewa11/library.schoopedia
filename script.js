@@ -611,3 +611,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ======================== METRICS COUNTER ANIMATION ========================
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter[data-count]');
+    const speed = 200; // The lower the slower
+
+    const animateCount = (counter) => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText.replace(/,/g, '');
+        const inc = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc).toLocaleString('en-US');
+            setTimeout(() => animateCount(counter), 10);
+        } else {
+            counter.innerText = "+" + target.toLocaleString('en-US');
+        }
+    };
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                animateCount(counter);
+                observer.unobserve(counter); // Ensure it runs once only
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+});

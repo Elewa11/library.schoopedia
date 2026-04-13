@@ -789,7 +789,7 @@ body.lang-ar .section-subtitle {
 
 
 /* ============================================
-   METRICS SECTION (Standalone Panel)
+   METRICS SECTION (Premium Mini-Cards)
    ============================================ */
 .metrics {
     position: relative;
@@ -799,53 +799,94 @@ body.lang-ar .section-subtitle {
 }
 
 .metrics-inner {
-    background: #FFFFFF;
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-2xl);
-    padding: 3rem 2rem;
-    box-shadow: var(--shadow-lg);
+    max-width: var(--container-max);
+    margin: 0 auto;
     display: flex;
     justify-content: center;
 }
 
 .metrics-grid {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
     width: 100%;
-    gap: 2rem;
 }
 
+/* Individual segment / mini-card */
 .metric-item {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 2rem 1.5rem;
     text-align: center;
-    padding: 0 1rem;
+    box-shadow: var(--shadow-md), 0 4px 20px rgba(15, 23, 42, 0.03);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    overflow: hidden;
 }
 
-.metric-item:not(:last-child)::after {
+.metric-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), 0 12px 32px rgba(15, 23, 42, 0.05);
+}
+
+/* Subtle accent glow line at the top */
+.metric-item::before {
     content: '';
     position: absolute;
-    right: -1rem;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: var(--border-light);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-color, var(--border-light));
+    opacity: 0.8;
 }
 
-body.lang-ar .metric-item:not(:last-child)::after {
-    right: auto;
-    left: -1rem;
+/* Icon / Accent marker */
+.metric-accent {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--accent-color);
+    background: color-mix(in srgb, var(--accent-color) 12%, transparent);
 }
 
-.metric-item h3 {
-    font-size: 2.2rem;
+.metric-accent svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Content spacing */
+.metric-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animated Number Tabular Formatting */
+.metric-content h3 {
+    font-size: 2.25rem;
     font-weight: 900;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.25rem;
+    color: var(--text-strong);
+    margin-bottom: 0.35rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.metric-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin: 0;
 }
 
 .metric-item p {
