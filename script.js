@@ -186,6 +186,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => {
         revealObserver.observe(el);
     });
+
+    // Special observer for the How it Works animated line
+    const stepsContainer = document.querySelector('.steps-container');
+    if (stepsContainer) {
+        const lineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Slight delay to sync with card reveals
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-line');
+                    }, 300);
+                    lineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+        lineObserver.observe(stepsContainer);
+    }
 });
 
 
