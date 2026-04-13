@@ -898,7 +898,7 @@ body.lang-ar .section-subtitle {
 }
 
 /* ============================================
-   FEATURES SECTION
+   FEATURES SECTION (Primary & Secondary Variants)
    ============================================ */
 .features {
     position: relative;
@@ -912,69 +912,129 @@ body.lang-ar .section-subtitle {
     gap: 2rem;
 }
 
+/* Base feature card */
 .feature-card {
-    background: #FFFFFF;
-    border: 1px solid var(--border-light);
     border-radius: var(--radius-2xl);
-    padding: 2.5rem;
     transition: all var(--transition-base);
     position: relative;
-    box-shadow: var(--shadow-sm);
     z-index: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.feature-card:hover {
+/* Variant 1: Primary Pillars (First Row) */
+.feature-card:nth-child(-n+3) {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-md), 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.feature-card:nth-child(-n+3):hover {
     transform: translateY(-8px);
     border-color: rgba(91, 141, 239, 0.3);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-xl), 0 20px 48px -12px rgba(91, 141, 239, 0.25);
     z-index: 2;
 }
 
+/* Variant 2: Secondary Capabilities (Second Row) */
+.feature-card:nth-child(n+4) {
+    background: var(--bg-surface);
+    border: 1px solid transparent;
+    padding: 2.25rem 2.5rem;
+    box-shadow: none;
+}
+
+.feature-card:nth-child(n+4):hover {
+    background: #FFFFFF;
+    transform: translateY(-4px);
+    border-color: var(--border-light);
+    box-shadow: var(--shadow-lg), 0 12px 24px rgba(15, 23, 42, 0.05);
+    z-index: 2;
+}
+
+/* Soft Branded Icon Containers */
 .feature-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
     position: relative;
     transition: transform var(--transition-base);
+    flex-shrink: 0;
+}
+
+/* Icon - Primary Row */
+.feature-card:nth-child(-n+3) .feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-xl);
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+/* Icon - Secondary Row */
+.feature-card:nth-child(n+4) .feature-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+    background: transparent;
 }
 
 .feature-card:hover .feature-icon {
-    transform: scale(1.1);
+    transform: scale(1.08) translateY(-2px);
 }
 
-.feature-icon::after {
+/* Soft tint backdrop using currentColor */
+.feature-icon::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
     background: currentColor;
     opacity: 0.12;
+    transition: opacity var(--transition-base);
 }
 
+.feature-card:hover .feature-icon::before {
+    opacity: 0.18;
+}
+
+/* Typography Spacing */
 .feature-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 800;
     color: var(--text-strong);
     margin-bottom: 1rem;
     line-height: 1.4;
+    letter-spacing: -0.01em;
+}
+
+.feature-card:nth-child(n+4) h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
 .feature-card p {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-body);
     line-height: 1.7;
+    margin: 0;
+}
+
+.feature-card:nth-child(n+4) p {
+    font-size: 0.95rem;
 }
 
 body.lang-ar .feature-card p {
     line-height: 1.8;
 }
 
-/* Feature variants */
+/* Feature brand color assignment */
 .feature-card.feature-blue .feature-icon { color: var(--brand-blue); }
 .feature-card.feature-purple .feature-icon { color: var(--brand-purple); }
 .feature-card.feature-green .feature-icon { color: var(--brand-green); }
