@@ -1170,81 +1170,118 @@ body.lang-ar .step-card p {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
+    overflow: hidden;
+}
+
+/* Staged Background Composition */
+.showcase::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(91, 141, 239, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .showcase-visual {
     position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    border-radius: var(--radius-2xl);
+    max-width: 1040px;
+    margin: 3rem auto 5rem;
+    border-radius: calc(var(--radius-2xl) + 8px);
     background: #FFFFFF;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-xl);
-    transition: transform var(--transition-slow);
+    box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.1), 0 20px 40px -20px rgba(91, 141, 239, 0.15);
+    transition: transform var(--transition-slow), box-shadow var(--transition-slow);
 }
 
 .showcase-visual:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 50px 120px -20px rgba(15, 23, 42, 0.12), 0 30px 60px -20px rgba(91, 141, 239, 0.2);
 }
 
+/* Soft luminous aura around the mockup */
 .showcase-visual::before {
     content: '';
     position: absolute;
     inset: -2px;
-    background: var(--gradient-primary);
-    border-radius: calc(var(--radius-2xl) + 2px);
+    background: linear-gradient(135deg, rgba(91, 141, 239, 0.2), rgba(139, 77, 158, 0.1), rgba(91, 141, 239, 0.2));
+    border-radius: calc(var(--radius-2xl) + 10px);
     z-index: -1;
-    opacity: 0.15;
-    filter: blur(15px);
+    opacity: 0.8;
+    filter: blur(12px);
 }
 
 .showcase-visual img {
     width: 100%;
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-2xl);
+    display: block;
+    border: 1px solid rgba(15, 23, 42, 0.05); /* defines the edge clearly */
 }
 
+/* Bottom features container */
 .showcase-features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 4rem;
+    gap: 2.5rem;
+    margin-top: 5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .showcase-feature {
-    background: var(--bg-surface);
+    background: #FFFFFF;
     border: 1px solid var(--border-light);
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     border-radius: var(--radius-xl);
     text-align: center;
     transition: all var(--transition-base);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-sm), 0 4px 12px rgba(15, 23, 42, 0.02);
 }
 
 .showcase-feature:hover {
-    border-color: var(--primary-light);
+    border-color: rgba(91, 141, 239, 0.3);
     transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
-    background: #FFFFFF;
+    box-shadow: var(--shadow-lg), 0 12px 24px rgba(15, 23, 42, 0.04);
 }
 
 .showcase-feature .sf-icon {
-    font-size: 2.2rem;
-    margin-bottom: 1.25rem;
-    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    font-size: 1.75rem;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--primary);
+    transition: transform var(--transition-base), background var(--transition-base);
+}
+
+.showcase-feature:hover .sf-icon {
+    transform: scale(1.1) translateY(-2px);
+    background: color-mix(in srgb, var(--primary) 10%, transparent);
 }
 
 .showcase-feature h4 {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--text-strong);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
 }
 
 .showcase-feature p {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--text-body);
+    line-height: 1.7;
+    margin: 0;
 }
 
 /* ============================================
