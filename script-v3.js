@@ -1,6 +1,7 @@
 /**
  * SchooPedia v3 — Hybrid Premium Interactions
  */
+document.addEventListener('DOMContentLoaded', () => {
 
     // 1. PREMIUM CUSTOM CURSOR
     const dot = document.createElement('div');
