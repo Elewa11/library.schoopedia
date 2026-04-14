@@ -56,16 +56,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const revealObserver = new IntersectionObserver(revealCallback, {
-        threshold: 0.05,
-        rootMargin: '0px'
+        threshold: 0.01,
+        rootMargin: '20px'
     });
 
-    document.querySelectorAll('[data-reveal], .stagger').forEach(el => {
-        revealObserver.observe(el);
-    });
+    const revealElements = document.querySelectorAll('[data-reveal], .stagger');
+    
+    // Initial Check for elements already in viewport
+    const checkInitialReveal = () => {
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('active');
+            }
+            // Start observing anyway for future scrolls
+            revealObserver.observe(el);
+        });
+    };
 
-    // Mark as ready
+    // Mark as ready and check
     document.body.classList.add('js-ready');
+    checkInitialReveal();
 
 
     // 3. PARALLAX EFFECTS
