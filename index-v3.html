@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchooPedia | سكوبيديا — Hybrid Premium Experience</title>
+    <meta name="description" content="SchooPedia - The flagship digital education library. سكوبيديا - بوابة المعرفة الذكية للمناهج والمصادر التعليمية.">
+    <link rel="stylesheet" href="style-v3.css">
+    <link rel="icon" type="image/png" href="assets/logo-en.png">
+</head>
+
+<body class="lang-ar">
+
+    <!-- ======================== NAVIGATION ======================== -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/logo-ar.png" alt="سكوبيديا" lang="ar">
+                <img src="assets/logo-en.png" alt="SchooPedia" lang="en">
+            </a>
+
+            <div class="nav-links">
+                <a href="#libraries" lang="ar">المكتبات</a>
+                <a href="#libraries" lang="en">Libraries</a>
+
+                <a href="#journey" lang="ar">كيف تعمل</a>
+                <a href="#journey" lang="en">How it Works</a>
+
+                <a href="#showcase" lang="ar">المنصة</a>
+                <a href="#showcase" lang="en">Platform</a>
+
+                <a href="#audience" lang="ar">لمن صُممت</a>
+                <a href="#audience" lang="en">Who it is for</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-glass" onclick="toggleLanguage()" style="padding: 0.5rem 1rem; font-size: 0.8rem;">
+                    <span lang="ar">EN</span>
+                    <span lang="en">AR</span>
+                </button>
+                <a href="https://library.schoopedia.com/login" class="btn-glass" lang="ar" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">دخول</a>
+                <a href="https://library.schoopedia.com/login" class="btn-glass" lang="en" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Login</a>
+                <a href="#contact" class="btn btn-primary" lang="ar" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; display: none;">احجز عرضاً</a>
+                <a href="#contact" class="btn btn-primary" lang="en" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; display: none;">Book a Demo</a>
+                
+                <button class="menu-toggle" id="menuToggle" style="background: none; border: none; color: inherit; cursor: pointer; display: none; padding: 0.5rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================== HERO (DARK) ======================== -->
+    <section class="surface-dark hero" id="hero">
+        <div class="ambient-glow" style="width: 800px; height: 800px; top: -20%; left: -10%; background: radial-gradient(circle, var(--primary-blue), transparent 70%);"></div>
+        <div class="ambient-glow" style="width: 600px; height: 600px; bottom: 0; right: -10%; background: radial-gradient(circle, var(--primary-purple), transparent 70%); opacity: 0.1;"></div>
+        
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content" data-reveal>
+                    <div class="section-tag" lang="ar">🚀 نظام تعلُّم ذكي</div>
+                    <div class="section-tag" lang="en">🚀 Intelligent Learning System</div>
+
+                    <h1 lang="ar">بوابة <span class="text-gradient">المعرفة الذكية</span> للمناهج والمصادر التعليمية</h1>
+                    <h1 lang="en">Smarter <span class="text-gradient">Curriculum Discovery</span> for Every Learner</h1>
+
+                    <p class="hero-subtitle" lang="ar">سكوبيديا ليست مجرد مكتبة؛ إنها محرك اكتشاف متطور يربط المناهج الوطنية بآلاف المصادر التعليمية والتقييمات التفاعلية فوراً.</p>
+                    <p class="hero-subtitle" lang="en">More than just a library; SchooPedia is a smart discovery engine connecting national curricula to thousands of resources instantly.</p>
+
+                    <div class="btns-group" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://library.schoopedia.com/login" class="btn btn-primary" lang="ar">ابدأ استكشاف المناهج</a>
+                        <a href="https://library.schoopedia.com/login" class="btn btn-primary" lang="en">Start Discovering</a>
+                        <button class="btn btn-glass" lang="ar">شاهد كيف يعمل</button>
+                        <button class="btn btn-glass" lang="en">Watch Overview</button>
+                    </div>
+
+                    <div style="margin-top: 3rem; display: flex; align-items: center; gap: 1.5rem; opacity: 0.7;">
+                        <div style="font-weight: 700; font-size: 1.2rem;" lang="ar">+100,000 معلم</div>
+                        <div style="font-weight: 700; font-size: 1.2rem;" lang="en">+100k Teachers</div>
+                        <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2);"></div>
+                        <div style="color: #FBBF24;" lang="ar">★★★★★ تقييم ممتاز</div>
+                        <div style="color: #FBBF24;" lang="en">★★★★★ Excellent Rating</div>
+                    </div>
+                </div>
+
+                <div class="hero-visual" data-reveal>
+                    <div class="hero-glow-core"></div>
+                    <!-- Floating UI Fragments -->
+                    <div class="floating-fragment" style="top: 15%; right: 10%; width: 280px;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                            <span style="font-size: 1.5rem;">📚</span>
+                            <div style="flex: 1;">
+                                <div style="height: 6px; width: 60%; background: rgba(255,255,255,0.2); border-radius: 3px; margin-bottom: 4px;"></div>
+                                <div style="height: 4px; width: 40%; background: rgba(255,255,255,0.1); border-radius: 2px;"></div>
+                            </div>
+                        </div>
+                        <strong lang="ar">24 مصدر متاح</strong>
+                        <strong lang="en">24 Resources</strong>
+                    </div>
+
+                    <div class="floating-fragment" style="bottom: 20%; left: 0; width: 240px; animation-delay: -3s;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span style="font-size: 1.5rem; color: var(--accent-cyan);">✅</span>
+                            <div lang="ar">جاهز للحصة</div>
+                            <div lang="en">Ready for Class</div>
+                        </div>
+                    </div>
+                    
+                    <img src="assets/platform-showcase.png" alt="Platform Preview" style="width: 100%; border-radius: var(--radius-lg); transform: rotateX(10deg) rotateY(-10deg); box-shadow: -40px 40px 100px rgba(0,0,0,0.5);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== METRICS (LIGHT) ======================== -->
+    <section class="surface-light metrics">
+        <div class="ambient-glow" style="width: 400px; height: 400px; top: 0; left: 0; background: radial-gradient(circle, var(--primary-blue), transparent 70%); opacity: 0.05;"></div>
+        <div class="container">
+            <div class="metrics-inner stagger">
+                <div class="metric-item">
+                    <h3 data-count="30000">+30,000</h3>
+                    <p lang="ar">فيديو تعليمي</p>
+                    <p lang="en">Videos</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-count="10000">+10,000</h3>
+                    <p lang="ar">عنصر تفاعلي</p>
+                    <p lang="en">Interactives</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-count="1000000">+1,000,000</h3>
+                    <p lang="ar">سؤال وتقييم</p>
+                    <p lang="en">Questions</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-count="900000">+900,000</h3>
+                    <p lang="ar">مصدر إثرائي</p>
+                    <p lang="en">Resources</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== LIBRARIES (LIGHT/TINT) ======================== -->
+    <section class="surface-tint libraries" id="libraries">
+        <div class="ambient-glow" style="width: 600px; height: 600px; bottom: 0; right: 0; background: radial-gradient(circle, var(--primary-purple), transparent 70%); opacity: 0.05;"></div>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;" data-reveal>
+                <div class="section-tag" lang="ar">🏛️ المكتبات والذكاء الاصطناعي</div>
+                <div class="section-tag" lang="en">🏛️ Libraries & AI</div>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;" lang="ar">نظام بيئي تعليمي ذكي ومتكامل</h2>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;" lang="en">A Smart & Integrated Education Ecosystem</h2>
+                <p style="color: var(--text-on-light-med); max-width: 700px; margin: 0 auto; font-size: 1.1rem;" lang="ar">اكتشف مصادر تعليمية متنوعة معززة بأحدث تقنيات البحث والتصنيف الذكي</p>
+                <p style="color: var(--text-on-light-med); max-width: 700px; margin: 0 auto; font-size: 1.1rem;" lang="en">Discover diverse educational resources enhanced with the latest smart search and classification technologies</p>
+            </div>
+
+            <div class="libraries-grid stagger">
+                <!-- Card 1 -->
+                <div class="premium-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">📚</div>
+                    <h3 style="margin-bottom: 1rem;" lang="ar">مكتبة المناهج الحكومية</h3>
+                    <h3 style="margin-bottom: 1rem;" lang="en">National Curricula Library</h3>
+                    <p lang="ar">مصادر تعليمية مخصصة مبنية على المناهج الدراسية الرسمية لكل دولة، مع ربط ذكي بالأهداف التعليمية.</p>
+                    <p lang="en">Customized educational resources built on the official curriculum of each country, with smart mapping to learning objectives.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="premium-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🧠</div>
+                    <h3 style="margin-bottom: 1rem;" lang="ar">بحث ذكي بالذكاء الاصطناعي</h3>
+                    <h3 style="margin-bottom: 1rem;" lang="en">AI-Powered Smart Search</h3>
+                    <p lang="ar">محرك بحث ذكي يفهم احتياجاتك ويقدم لك النتائج الأكثر صلة بسرعة فائقة.</p>
+                    <p lang="en">An intelligent search engine that understands your needs and delivers the most relevant results instantly.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="premium-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">📊</div>
+                    <h3 style="margin-bottom: 1rem;" lang="ar">تقييمات وأسئلة جاهزة</h3>
+                    <h3 style="margin-bottom: 1rem;" lang="en">Ready-Made Assessments</h3>
+                    <p lang="ar">أكثر من مليون سؤال وتقييم جاهز للاستخدام مباشرة في حصصك الدراسية.</p>
+                    <p lang="en">Over 1 million questions and assessments ready to use directly in your classroom sessions.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="premium-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🔬</div>
+                    <h3 style="margin-bottom: 1rem;" lang="ar">مكتبة المصادر العامة</h3>
+                    <h3 style="margin-bottom: 1rem;" lang="en">General Resources Library</h3>
+                    <p lang="ar">توسّع في المعرفة بمصادر إثرائية تغطي مواضيع متنوعة خارج الإطار الدراسي التقليدي.</p>
+                    <p lang="en">Expand knowledge with enrichment resources covering various topics outside the traditional framework.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="premium-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🌐</div>
+                    <h3 style="margin-bottom: 1rem;" lang="ar">مكتبة المصادر المفتوحة</h3>
+                    <h3 style="margin-bottom: 1rem;" lang="en">Open Resources Library</h3>
+                    <p lang="ar">محتوى تعليمي من مصادر عالمية متاحة للجميع لتعزيز التجربة التعليمية بأفضل الممارسات.</p>
+                    <p lang="en">Educational content from global open sources available to everyone to enhance the learning experience.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="premium-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🎥</div>
+                    <h3 style="margin-bottom: 1rem;" lang="ar">فيديوهات تعليمية متميزة</h3>
+                    <h3 style="margin-bottom: 1rem;" lang="en">Premium Educational Videos</h3>
+                    <p lang="ar">مكتبة ضخمة من الفيديوهات التعليمية العالية الجودة المرتبطة بالمناهج الدراسية.</p>
+                    <p lang="en">A massive library of high-quality educational videos mapped to national curricula.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SHOWCASE (DARK) ======================== -->
+    <section class="surface-dark showcase" id="showcase">
+        <div class="ambient-glow" style="width: 500px; height: 500px; top: 0; right: 0; background: radial-gradient(circle, var(--accent-cyan), transparent 70%); opacity: 0.1;"></div>
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-img" data-reveal>
+                    <img src="assets/platform-showcase.png" alt="Platform" style="width: 100%; display: block;">
+                </div>
+                <div data-reveal>
+                    <div class="section-tag" lang="ar">💻 المنصة الرقمية</div>
+                    <div class="section-tag" lang="en">💻 Digital Platform</div>
+                    <h2 style="font-size: 3rem; margin-bottom: 2rem;" lang="ar">تجربة تعليمية رقمية بمعايير عالمية</h2>
+                    <h2 style="font-size: 3rem; margin-bottom: 2rem;" lang="en">World-Class Digital Learning Experience</h2>
+                    
+                    <div style="display: grid; gap: 2rem;">
+                        <div>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;" lang="ar">تصنيف ذكي متطور</h4>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;" lang="en">Smart Categories</h4>
+                            <p lang="ar">تنظيم آلي للمحتوى حسب المنهج والصف والموضوع الدراسي بدقة متناهية.</p>
+                            <p lang="en">Automated organization by curriculum, grade, and subject with extreme precision.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;" lang="ar">محرك بحث فائق الذكاء</h4>
+                            <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;" lang="en">Advanced AI Search</h4>
+                            <p lang="ar">تقنيات فلترة سريعة تمكنك من العثور على ما تحتاجه في ثوانٍ معدودة.</p>
+                            <p lang="en">Fast filtering technologies enabling you to find what you need in seconds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== JOURNEY (LIGHT) ======================== -->
+    <section class="surface-light journey" id="journey">
+        <div class="ambient-glow" style="width: 800px; height: 800px; top: 0; left: 50%; transform: translateX(-50%); background: radial-gradient(circle, var(--primary-blue), transparent 70%); opacity: 0.03;"></div>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;" data-reveal>
+                <div class="section-tag" lang="ar">⚡ رحلتك في سكوبيديا</div>
+                <div class="section-tag" lang="en">⚡ Your Journey</div>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;" lang="ar">ابدأ في خطوات بسيطة وذكية</h2>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;" lang="en">Begin in Simple, Smart Steps</h2>
+            </div>
+
+            <div class="steps-container stagger">
+                <div class="step-item">
+                    <div class="step-num">01</div>
+                    <h3 lang="ar">أنشئ حسابك الذكي</h3>
+                    <h3 lang="en">Create Your Account</h3>
+                    <p lang="ar">سجّل مجاناً في ثوانٍ وابدأ رحلتك في الوصول لأكبر مكتبة تعليمية عربية.</p>
+                    <p lang="en">Sign up for free in seconds and begin your journey to access the library.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">02</div>
+                    <h3 lang="ar">خصص اهتماماتك</h3>
+                    <h3 lang="en">Customize Interests</h3>
+                    <p lang="ar">اختر المناهج والمراحل الدراسية التي تهمك لتحصل على محتوى مخصص.</p>
+                    <p lang="en">Select curricula and grade levels that interest you for tailored content.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">03</div>
+                    <h3 lang="ar">استكشف المصادر</h3>
+                    <h3 lang="en">Explore Resources</h3>
+                    <p lang="ar">تصفّح آلاف الفيديوهات والتقييمات باستخدام أدوات البحث المتقدمة.</p>
+                    <p lang="en">Browse thousands of videos and assessments using advanced tools.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">04</div>
+                    <h3 lang="ar">ارفع جودة حصتك</h3>
+                    <h3 lang="en">Elevate Your Session</h3>
+                    <p lang="ar">ادمج المصادر في حصصك مباشرة لتحقيق أفضل تفاعل ونتائج تعليمية.</p>
+                    <p lang="en">Integrate resources directly into your classes for better engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== AUDIENCE (LIGHT/SOFT) ======================== -->
+    <section class="surface-light audience" id="audience">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;" data-reveal>
+                <div class="section-tag" lang="ar">👥 الفئات المستهدفة</div>
+                <div class="section-tag" lang="en">👥 Target Audience</div>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;" lang="ar">منظومة تعليمية تخدم الجميع</h2>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;" lang="en">An Ecosystem for Everyone</h2>
+            </div>
+
+            <div class="audience-grid stagger">
+                <div class="premium-card">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🧑‍🏫</div>
+                    <h3 lang="ar">المعلمون المبدعون</h3>
+                    <h3 lang="en">Modern Teachers</h3>
+                    <p lang="ar">وفر وقتك وجهدك في التحضير مع آلاف المصادر الجاهزة لدعم حصتك بلمسات إبداعية.</p>
+                    <p lang="en">Save prep time and effort with thousands of ready resources to support your lessons.</p>
+                </div>
+                <div class="premium-card">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📋</div>
+                    <h3 lang="ar">المشرفون والإدارة</h3>
+                    <h3 lang="en">Admin & Supervisors</h3>
+                    <p lang="ar">أدوات متطورة لمتابعة الجودة التعليمية والتأكد من توافق المخرجات مع المعايير.</p>
+                    <p lang="en">Advanced tools to monitor educational quality and ensure alignment with standards.</p>
+                </div>
+                <div class="premium-card">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🏫</div>
+                    <h3 lang="ar">المؤسسات والوزارات</h3>
+                    <h3 lang="en">Schools & Ministries</h3>
+                    <p lang="ar">شريك استراتيجي في التحول الرقمي، يقدم محتوى تعليمياً ضخماً وموثوقاً.</p>
+                    <p lang="en">A strategic partner in digital transformation, providing massive and trusted content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FINAL CTA (DARK) ======================== -->
+    <section class="surface-dark cta-banner" id="contact">
+        <div class="container">
+            <div class="cta-box" data-reveal>
+                <h2 lang="ar">ابدأ رحلتك التعليمية الذكية اليوم</h2>
+                <h2 lang="en">Start Your Smart Education Journey Today</h2>
+                <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3rem;" lang="ar">انضم إلى مجتمع سكوبيديا وكن جزءاً من مستقبل التعليم الرقمي في الوطن العربي</p>
+                <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3rem;" lang="en">Join the SchooPedia community and be part of the future of digital education in the Arab world</p>
+                
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="https://library.schoopedia.com/login" class="btn btn-primary" style="background: white; color: var(--primary-blue);" lang="ar">انضم إلينا الآن</a>
+                    <a href="https://library.schoopedia.com/login" class="btn btn-primary" style="background: white; color: var(--primary-blue);" lang="en">Join Us Now</a>
+                    <button class="btn btn-glass" lang="ar">اطلب عرضاً توضيحياً</button>
+                    <button class="btn btn-glass" lang="en">Request a Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER (DARK) ======================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="assets/logo-en.png" alt="Schoopedia" style="height: 40px; filter: brightness(0) invert(1); margin-bottom: 1.5rem;">
+                    <p style="font-size: 0.95rem; line-height: 1.8;" lang="ar">نحن نؤمن بأن التكنولوجيا هي المفتاح لتمكين المعلمين والمتعلمين العرب بمصادر عالمية الجودة.</p>
+                    <p style="font-size: 0.95rem; line-height: 1.8;" lang="en">We believe technology is the key to empowering Arabic teachers and learners with world-class resources.</p>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;" lang="ar">المنصة</h4>
+                    <h4 style="color: white; margin-bottom: 1.5rem;" lang="en">Platform</h4>
+                    <ul style="display: grid; gap: 0.75rem; font-size: 0.9rem;">
+                        <li><a href="#libraries">المكتبات الرقمية</a></li>
+                        <li><a href="#journey">كيف تعمل</a></li>
+                        <li><a href="https://library.schoopedia.com/login">دخول المستخدم</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;" lang="ar">الشركة</h4>
+                    <h4 style="color: white; margin-bottom: 1.5rem;" lang="en">Company</h4>
+                    <ul style="display: grid; gap: 0.75rem; font-size: 0.9rem;">
+                        <li><a href="#">عن المتحدة</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem;" lang="ar">تواصل معنا</h4>
+                    <h4 style="color: white; margin-bottom: 1.5rem;" lang="en">Contact</h4>
+                    <ul style="display: grid; gap: 0.75rem; font-size: 0.9rem;">
+                        <li>info@schoopedia.com</li>
+                        <li>مركز المساعدة</li>
+                        <li>طلب الدعم</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 SchooPedia. All rights reserved.</p>
+                <p lang="ar">من تطوير المجموعة المتحدة للتعليم</p>
+                <p lang="en">Developed by Almotahida Education Group</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-v3.js"></script>
+</body>
+</html>
