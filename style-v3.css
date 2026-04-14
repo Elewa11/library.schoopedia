@@ -317,24 +317,24 @@ body.lang-ar h1, body.lang-ar h2 {
 /* ============================================
    REVEAL SYSTEM
    ============================================ */
-[data-reveal] {
+body.js-ready [data-reveal] {
     opacity: 0;
     transform: translateY(40px);
     transition: all 1s var(--ease-cinematic);
 }
 
-[data-reveal].active {
+body.js-ready [data-reveal].active {
     opacity: 1;
     transform: translateY(0);
 }
 
-.stagger > * {
+body.js-ready .stagger > * {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s var(--ease-cinematic);
 }
 
-.stagger.active > * {
+body.js-ready .stagger.active > * {
     opacity: 1;
     transform: translateY(0);
 }

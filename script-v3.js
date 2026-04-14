@@ -56,13 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const revealObserver = new IntersectionObserver(revealCallback, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px'
     });
 
     document.querySelectorAll('[data-reveal], .stagger').forEach(el => {
         revealObserver.observe(el);
     });
+
+    // Mark as ready
+    document.body.classList.add('js-ready');
 
 
     // 3. PARALLAX EFFECTS
